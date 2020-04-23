@@ -4,6 +4,10 @@ $(document).ready(function(){
   const display = $('.maincontent');
   let inscroll = false;
 
+  //for mobile
+  const md = new MobileDetect(window.navigator.userAgent);
+  const isMobile = md.mobile();
+
   const countPosition = (index) => {
     return -index * 100 + '%';
   };
@@ -63,5 +67,24 @@ $(document).ready(function(){
     scrollViewport(direction);
 
   });
+
+  if (isMobile) {
+
+    //дергания
+    // $('.wrapper').on('touchmove', e => e.preventDefault());
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+    }, {passive: false})
+
+    $(window).swipe( {
+      swipe: function(event, direction) {
+        const scrollDirection = direction === 'up' ? 'next' : 'prev';
+
+        scrollViewport(scrollDirection);
+      }
+    });
+
+  };
 
 });
