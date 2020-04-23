@@ -68,6 +68,20 @@ $(document).ready(function(){
 
   });
 
+  $(window).on('keydown', function(e){
+    const keyCode = e.keyCode;
+    
+    switch (keyCode) {
+      case 40:
+        scrollViewport('next');
+        break;
+      case 38:
+        scrollViewport('prev');
+        break;
+    };
+
+  })
+
   if (isMobile) {
 
     //дергания
