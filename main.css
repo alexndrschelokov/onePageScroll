@@ -1,0 +1,50 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.maincontent {
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  transform: translateY(-0%);
+  
+  transition: transform 1s;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1 {
+  background: #1abc9c;
+}
+
+.section-2 {
+  background: #3498db;
+}
+
+.section-3 {
+  background: #304458;
+}
+
+.title {
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+  line-height: 42px;
+}
