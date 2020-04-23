@@ -58,13 +58,9 @@ $(document).ready(function(){
   $(window).on('wheel', function(e){
     
     const deltaY = e.originalEvent.deltaY;
+    const direction = deltaY > 0 ? 'next' : 'prev';
 
-    if (deltaY > 0) {
-      scrollViewport('next');
-    }
-    if (deltaY < 0) {
-      scrollViewport('prev');
-    }
+    scrollViewport(direction);
 
   });
 
